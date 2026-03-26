@@ -433,18 +433,19 @@
 
   .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     max-width: 1200px;
     margin: 0 auto;
     background: rgba(201,168,76,0.1);
   }
 
-  .event-card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    max-width: 400px;
-    margin: 0 auto;
-    width: 100%;
+  @media (max-width: 768px) {
+    .events-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .events-grid { grid-template-columns: 1fr; }
   }
 
   .event-card {
@@ -994,47 +995,47 @@
 
   <div class="events-grid fade-in">
     <div class="event-card">
-      <span class="event-icon">💍</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Weddings</div>
       <p class="event-desc">An unforgettable galactic twist on your most special day — walking you down the aisle or greeting guests.</p>
     </div>
     <div class="event-card">
-      <span class="event-icon">🎂</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Birthday Parties</div>
       <p class="event-desc">For kids and adults alike. Nothing beats having a Stormtrooper crash the cake cutting.</p>
     </div>
     <div class="event-card">
-      <span class="event-icon">🏢</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Corporate Events</div>
       <p class="event-desc">Product launches, exhibitions, company milestones — we bring the star power.</p>
     </div>
     <div class="event-card">
-      <span class="event-icon">❤️</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Charity Events</div>
       <p class="event-desc">Happy to support great causes. The Rebellion always fights for what's right.</p>
     </div>
     <div class="event-card">
-      <span class="event-icon">🚢</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Cruise Ships</div>
       <p class="event-desc">Themed voyages and at-sea entertainment — we travel across Scotland and beyond.</p>
     </div>
     <div class="event-card">
-      <span class="event-icon">🎪</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Fairs & Festivals</div>
       <p class="event-desc">Cosplay conventions, public events, and everything in between.</p>
     </div>
     <div class="event-card">
-      <span class="event-icon">🥋</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Sports & Clubs</div>
       <p class="event-desc">Grading days, club galas, team celebrations — we add something extraordinary.</p>
     </div>
     <div class="event-card">
-      <span class="event-icon">🎄</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Seasonal Events</div>
       <p class="event-desc">Christmas parties, Halloween events, and Star Wars Day celebrations.</p>
     </div>
     <div class="event-card">
-      <span class="event-icon">🕊️</span>
+      <span class="event-icon" style="font-size:1.5rem;color:var(--gold)">✦</span>
       <div class="event-name">Funerals & Memorials</div>
       <p class="event-desc">A deeply personal tribute for devoted Star Wars fans — a dignified, meaningful farewell that celebrates a life well lived.</p>
     </div>
