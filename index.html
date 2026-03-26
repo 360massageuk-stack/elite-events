@@ -938,7 +938,7 @@
 </div>
 
 <!-- CHARACTERS -->
-<section id="characters">
+<section id="characters" name="characters">
   <div class="section-header fade-in">
     <span class="section-eyebrow">The Roster</span>
     <h2 class="section-title">Meet the Crew</h2>
@@ -1157,22 +1157,23 @@
   </div>
 
   <div class="contact-inner fade-in">
+    <form action="https://formspree.io/f/xbdplroq" method="POST">
     <div class="form-grid">
       <div class="form-group">
         <label for="name">Your Name</label>
-        <input type="text" id="name" placeholder="Luke Skywalker">
+        <input type="text" id="name" name="name" placeholder="Luke Skywalker">
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="your@email.com">
+        <input type="email" id="email" name="email" placeholder="your@email.com">
       </div>
       <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="+44 7700 000000">
+        <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000">
       </div>
       <div class="form-group">
         <label for="event-type">Event Type</label>
-        <select id="event-type">
+        <select id="event-type" name="event-type">
           <option value="" disabled selected>Select event type</option>
           <option>Wedding</option>
           <option>Birthday Party</option>
@@ -1186,15 +1187,15 @@
       </div>
       <div class="form-group">
         <label for="date">Event Date</label>
-        <input type="date" id="date">
+        <input type="date" id="date" name="date">
       </div>
       <div class="form-group">
         <label for="location">Location</label>
-        <input type="text" id="location" placeholder="Town / Venue, Scotland">
+        <input type="text" id="location" name="location" placeholder="Town / Venue, Scotland">
       </div>
       <div class="form-group">
         <label for="characters">Characters Required</label>
-        <select id="characters">
+        <select id="characters" name="characters">
           <option value="" disabled selected>Select characters</option>
           <option>2 x Stormtroopers</option>
           <option>1 x Stormtrooper + Princess Leia</option>
@@ -1205,7 +1206,7 @@
       </div>
       <div class="form-group">
         <label for="duration">Duration</label>
-        <select id="duration">
+        <select id="duration" name="duration">
           <option value="" disabled selected>How long?</option>
           <option>1 hour</option>
           <option>2 hours</option>
@@ -1217,7 +1218,7 @@
       </div>
       <div class="form-group full">
         <label for="message">Additional Details</label>
-        <textarea id="message" placeholder="Tell us anything else about your event — number of guests, any special requests, or questions you have..."></textarea>
+        <textarea id="message" name="message" placeholder="Tell us anything else about your event — number of guests, any special requests, or questions you have..."></textarea>
       </div>
     </div>
     <button class="btn-primary form-submit" onclick="alert('Thank you! We\'ll be in touch very soon. May the Force be with you!')">Send Transmission</button>
