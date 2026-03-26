@@ -433,11 +433,18 @@
 
   .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1px;
     max-width: 1200px;
     margin: 0 auto;
     background: rgba(201,168,76,0.1);
+  }
+
+  .event-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .event-card {
@@ -1223,7 +1230,7 @@
   <p class="footer-tagline">Bringing the Galaxy to Scotland, One Event at a Time</p>
 
   <div class="footer-contact">
-    <a href="mailto:eliteeventscrewuk@gmail.com">eliteeventscrewuk@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#e0858c8994858596858e949383928597958ba0878d81898cce838f8d"><span class="__cf_email__" data-cfemail="92f7fefbe6f7f7e4f7fce6e1f1e0f7e5e7f9d2f5fff3fbfebcf1fdff">[email&#160;protected]</span></a>
   </div>
 
   <div class="footer-links">
@@ -1239,12 +1246,4 @@
   <span style="font-size:0.75rem; opacity:0.5">Elite Events is an independent entertainment company and is not affiliated with or endorsed by Lucasfilm Ltd. or Disney.</span></p>
 </footer>
 
-<script>
-  // sections always visible
-
-  // Nav scroll effect
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 60) {
-      nav.style.background = 'rgba(5,5,8,0.98)';
-      nav.style.bor
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></s
