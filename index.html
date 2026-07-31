@@ -25,7 +25,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: auto; }
 
   body {
     background: var(--black);
@@ -888,6 +888,14 @@
     .characters-grid { grid-template-columns: 1fr 1fr; }
     .events-grid { grid-template-columns: 1fr 1fr; }
   }
+
+
+  /* Keep anchored sections visible below the fixed navigation */
+  section[id] { scroll-margin-top: 190px; }
+
+  @media (max-width: 900px) {
+    section[id] { scroll-margin-top: 24px; }
+  }
 </style>
 </head>
 <body>
@@ -1272,5 +1280,43 @@
   <p class="footer-bottom">© 2025 Elite Events · Scotland · All Rights Reserved<br>
   <span style="font-size:0.75rem; opacity:0.5">Elite Events is an independent entertainment company and is not affiliated with or endorsed by Lucasfilm Ltd. or Disney.</span></p>
 </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></s
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        event.preventDefault();
+
+        const mobileMenu = document.querySelector('.nav-links');
+        if (mobileMenu) mobileMenu.classList.remove('open');
+
+        const nav = document.querySelector('nav');
+
+        function moveToTarget() {
+          let navOffset = 0;
+          if (nav && window.getComputedStyle(nav).position === 'fixed') {
+            navOffset = nav.getBoundingClientRect().height + 12;
+          }
+
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - navOffset;
+          window.scrollTo(0, Math.max(0, targetTop));
+        }
+
+        // Move immediately, then correct once more after the mobile menu/layout settles.
+        moveToTarget();
+        window.requestAnimationFrame(moveToTarget);
+        window.setTimeout(moveToTarget, 180);
+
+        history.replaceState(null, '', targetId);
+      });
+    });
+  });
+</script>
+</body>
+</html>
